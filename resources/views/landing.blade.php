@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FetchCare Solution | Index</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .booking-kit_logo-container_39b65c89.booking-kit_logo-container-is-desktop-up_0b5953ec {
-            min-height: 0 !important;
-        }
-    </style>
-</head>
+@section('content')
 
-<body>
-
-    <div class="container">
-        <header>
-            <div class="logo">
-                <img src="{{ asset('images/Logo.png') }}" alt="Logo">
-            </div>
-            <div class="nav_bar">
-                <ul>
-                    <li><a href="#">Featured</a></li>
-                    <li><a href="#">Pilot Program</a></li>
-                    <li><a href="#">Screenshots</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="apply_pilot">
-                <a class="btn">Apply To Pilot</a>
-            </div>
-        </header>
-    </div>
     <section class="hero">
         <div class="hero_container">
             <div class="hero_top_content">
@@ -330,77 +296,4 @@
             </div>
         </div>
     </section>
-
-
-    <footer>
-        <div class="footer_container">
-            <div class="footer_content">
-                <div class="logo">
-                    <img src="{{ asset('images/Logo_lg.png') }}" alt="logo_lg">
-                </div>
-                <div class="footer_links">
-                    <div class="left">
-                        <ul>
-                            <li>Features</li>
-                            <li>Pilot Program</li>
-                            <li>Screenshots</li>
-                        </ul>
-                    </div>
-                    <div class="middle">
-                        <ul>
-                            <li>Contact</li>
-                            <li>Privacy Policy</li>
-                            <li>Terms & Conditions</li>
-                        </ul>
-                    </div>
-                    <div class="right">
-                        <p class="subscribe_text">Subscribe for early access</p>
-                        <div class="input_group">
-                            <input type="email" placeholder="Enter your email">
-                            <div class="submit_btn">
-                                {{-- <div class="apply_pilot">
-                                    <a class="btn">Subscribe</a>
-                                </div> --}}
-                                <a>Apply To Pilot</a>
-                            </div>
-                        </div>
-                        <p class="contact_text">Contact</p>
-                        <div class="social_media">
-                            <img src="{{ asset('svg/mdi_linkedin.svg') }}" alt="twitter">
-                            <img src="{{ asset('svg/ic_baseline-facebook.svg') }}" alt="linkedin">
-                            <img src="{{ asset('svg/mingcute_instagram-fill.svg') }}" alt="facebook">
-                            <img src="{{ asset('svg/streamline-logos_x-twitter-logo-block.svg') }}" alt="twitter">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copy_right_text">
-                <p>© 2025 FetchCare Solutions</p>
-            </div>
-        </div>
-    </footer>
-
-
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $(".toggle-icon").on("click", function() {
-                const $icon = $(this);
-                const $answer = $icon.closest(".faq_accordion_container").find(".faq_answer");
-
-                $answer.stop(true).slideToggle(300);
-
-                // swap icon
-                if ($icon.attr("src").includes("add-circle.svg")) {
-                    $icon.attr("src", "{{ asset('svg/add-circle.svg') }}");
-                } else {
-                    $icon.attr("src", "{{ asset('svg/add-circle.svg') }}");
-                }
-            });
-        });
-    </script>
-</body>
-
-</html>
+@endsection
