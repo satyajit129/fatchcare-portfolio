@@ -17,6 +17,10 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: #000000;
@@ -787,6 +791,13 @@ header .logo img {
     padding: 0px;
 }
 
+.faq_item {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 .faq_content {
     width: 910px;
     display: flex;
@@ -813,19 +824,24 @@ header .logo img {
     color: #292929;
 }
 
+.faq_accordion_container {
+    background: rgba(242, 242, 242, 0.6);
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    border-radius: 12px;
+}
+
 .faq_accordion {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 24px;
+    align-items: flex-start;
+
     gap: 32px;
-    height: 84px;
-    background: rgba(242, 242, 242, 0.6);
-    border: 2px solid #FFFFFF;
-    box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.08);
+    height: 33px;
     backdrop-filter: blur(6px);
-    border-radius: 12px;
+
     width: 910px;
 }
 
@@ -833,34 +849,218 @@ header .logo img {
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
-    /* identical to box height, or 142% */
     letter-spacing: -0.02em;
-
-    /* Neutral/600 */
     color: #292929;
+}
+
+
+
+.faq_answer {
+    display: none;
 }
 
 .faq_accordion img {
     background: #111111;
     border-radius: 18px;
+    cursor: pointer;
 }
 
-.faq_answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 24px;
+.faq_answer p {
+    padding: 24px 0 0 0;
+    text-align: left;
 }
 
-.faq_item.active .faq_answer {
-    max-height: 300px; /* adjust depending on content */
-    padding: 16px 24px;
+/* footer */
+footer {
+    background: #111111;
 }
 
-.faq_item .toggle-icon {
-    transition: transform 0.3s ease;
+.footer_container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    padding: 50px 0 16.5px 0;
+    flex-direction: column;
+    gap: 43.36px;
 }
 
-.faq_item.active .toggle-icon {
-    transform: rotate(45deg); /* turn plus into x */
+.footer_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
+
+.footer_content .logo {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.footer_links {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 32px;
+}
+
+.footer_links .middle {
+    margin-left: 215px; /* gap between left & middle */
+}
+
+.footer_links .right {
+    margin-left: 215px; /* gap between middle & right */
+    flex: 1; /* right takes remaining width */
+}
+
+
+.footer_links .left {
+    display: flex;
+    gap: 40px;
+}
+
+.footer_links .left ul ,
+.footer_links .middle ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+
+.footer_links .left ul li ,
+.footer_links .middle ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+.footer_links .right  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    /* gap: 24px; */
+    width: 300px;
+}
+.footer_links .right .subscribe_text{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+.footer_links .right .input_group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.footer_links .right .input_group input {
+    width: 100%;
+    padding: 0 181px 0 16px; /* leave space for button */
+    height: 52px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.footer_links .right .input_group .submit_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: #0076CE;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.16);
+    border-radius: 0 8px 8px 0; /* join with input */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px 0 24px; /* extra space for arrow */
+    cursor: pointer;
+}
+
+.footer_links .right .input_group .submit_btn a {
+    position: relative; /* important for pseudo elements */
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Circle */
+.footer_links .right .input_group .submit_btn a::after {
+    content: "";
+    position: absolute;
+    right: -36px; /* pushes circle to the right side */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    z-index: 0;
+}
+
+/* Arrow inside the circle */
+.footer_links .right .input_group .submit_btn a::before {
+    content: "➔";
+    position: absolute;
+    right: -31px; /* inside the circle */
+    top: 48%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 600;
+    color: #0076CE;
+    z-index: 1;
+}
+
+/* Animate arrow on hover */
+.footer_links .right .input_group .submit_btn a:hover::before {
+    animation: arrow-slide 0.6s ease forwards;
+}
+
+/* Keyframes for arrow sliding */
+@keyframes arrow-slide {
+    0% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(6px);
+    }
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+}
+.footer_links .right .contact_text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+.copy_right_text p{
+    font-weight: 500;
+font-size: 14px;
+line-height: 140%;
+/* identical to box height, or 20px */
+text-align: center;
+letter-spacing: -0.02em;
+
+/* Neutral/400 */
+color: #646464;
+}
+
+
+

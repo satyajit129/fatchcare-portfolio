@@ -200,8 +200,9 @@
         <div class="contact_container">
             <div class="contact_left">
                 <p class="contact_intro">We’re here to help you</p>
-                <h2>Discuss Your <span> Clinic <br> Management Solution </span > <br> Needs</h2>
-                <p class="contact_email">Enter your email to get <span> updates, insights, and <br> exclusive early access.</span></p>
+                <h2>Discuss Your <span> Clinic <br> Management Solution </span> <br> Needs</h2>
+                <p class="contact_email">Enter your email to get <span> updates, insights, and <br> exclusive early
+                        access.</span></p>
             </div>
             <div class="contact_right">
                 <div class="contact_form">
@@ -211,57 +212,195 @@
                     <textarea name="" id="" cols="30" rows="10"></textarea>
                     <div class="submit_btn">
                         <div class="apply_pilot">
-                        <a class="btn">Get early Access</a>
-                    </div>
+                            <a class="btn">Get early Access</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<section class="faq">
-    <div class="faq_container">
-        <div class="faq_content">
-            <h2>FAQs</h2>
-            <p>We’re here to make business insurance simple.</p>
+    <section class="faq">
+        <div class="faq_container">
+            <div class="faq_content">
+                <h2>FAQs</h2>
+                <p>We’re here to make business insurance simple.</p>
 
-            <div class="faq_item">
-                <div class="faq_accordion">
-                    <h4>What is FetchCare, and who is it for?</h4>
-                    <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                <div class="faq_item">
+                    <div class="faq_accordion_container">
+                        <div class="faq_accordion">
+                            <h4>What is FetchCare, and who is it for?</h4>
+                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                        </div>
+                        <div class="faq_answer" style="display: none;">
+                            <p>
+                                FetchCare is a clinic management solution designed for healthcare providers,
+                                helping them streamline scheduling, patient records, billing, and overall operations.
+                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq_accordion_container">
+                        <div class="faq_accordion">
+                            <h4>Do I need technical skills to use FetchCare?</h4>
+                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                        </div>
+                        <div class="faq_answer" style="display: none;">
+                            <p>
+                                FetchCare is a clinic management solution designed for healthcare providers,
+                                helping them streamline scheduling, patient records, billing, and overall operations.
+                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq_accordion_container">
+                        <div class="faq_accordion">
+                            <h4>How secure is my data?</h4>
+                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                        </div>
+                        <div class="faq_answer" style="display: none;">
+                            <p>
+                                FetchCare is a clinic management solution designed for healthcare providers,
+                                helping them streamline scheduling, patient records, billing, and overall operations.
+                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq_accordion_container">
+                        <div class="faq_accordion">
+                            <h4>Can FetchCare integrate with my existing tools?</h4>
+                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                        </div>
+                        <div class="faq_answer" style="display: none;">
+                            <p>
+                                FetchCare is a clinic management solution designed for healthcare providers,
+                                helping them streamline scheduling, patient records, billing, and overall operations.
+                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq_accordion_container">
+                        <div class="faq_accordion">
+                            <h4>How does FetchCare improve my clinic’s efficiency?</h4>
+                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                        </div>
+                        <div class="faq_answer" style="display: none;">
+                            <p>
+                                FetchCare is a clinic management solution designed for healthcare providers,
+                                helping them streamline scheduling, patient records, billing, and overall operations.
+                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq_accordion_container">
+                        <div class="faq_accordion">
+                            <h4>Is there customer support if I need help?</h4>
+                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                        </div>
+                        <div class="faq_answer" style="display: none;">
+                            <p>
+                                FetchCare is a clinic management solution designed for healthcare providers,
+                                helping them streamline scheduling, patient records, billing, and overall operations.
+                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq_accordion_container">
+                        <div class="faq_accordion">
+                            <h4>Do you offer a free trial?</h4>
+                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                        </div>
+                        <div class="faq_answer" style="display: none;">
+                            <p>
+                                FetchCare is a clinic management solution designed for healthcare providers,
+                                helping them streamline scheduling, patient records, billing, and overall operations.
+                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
+                                engagement.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="faq_answer">
-                    <p>
-                        FetchCare is a clinic management solution designed for healthcare providers, 
-                        helping them streamline scheduling, patient records, billing, and overall operations. 
-                        It’s ideal for small to medium-sized clinics that want efficiency and better patient engagement.
-                    </p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer_container">
+            <div class="footer_content">
+                <div class="logo">
+                    <img src="{{ asset('images/Logo_lg.png') }}" alt="logo_lg">
+                </div>
+                <div class="footer_links">
+                    <div class="left">
+                        <ul>
+                            <li>Features</li>
+                            <li>Pilot Program</li>
+                            <li>Screenshots</li>
+                        </ul>
+                    </div>
+                    <div class="middle">
+                        <ul>
+                            <li>Contact</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms & Conditions</li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <p class="subscribe_text">Subscribe for early access</p>
+                        <div class="input_group">
+                            <input type="email" placeholder="Enter your email">
+                            <div class="submit_btn">
+                                {{-- <div class="apply_pilot">
+                                    <a class="btn">Subscribe</a>
+                                </div> --}}
+                                <a>Apply To Pilot</a>
+                            </div>
+                        </div>
+                        <p class="contact_text">Contact</p>
+                        <div class="social_media">
+                            <img src="{{ asset('svg/mdi_linkedin.svg') }}" alt="twitter">
+                            <img src="{{ asset('svg/ic_baseline-facebook.svg') }}" alt="linkedin">
+                            <img src="{{ asset('svg/mingcute_instagram-fill.svg') }}" alt="facebook">
+                            <img src="{{ asset('svg/streamline-logos_x-twitter-logo-block.svg') }}" alt="twitter">
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            <div class="copy_right_text">
+                <p>© 2025 FetchCare Solutions</p>
+            </div>
         </div>
-    </div>
-</section>
+    </footer>
 
 
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script>
-document.querySelectorAll('.faq_accordion').forEach(item => {
-    item.addEventListener('click', () => {
-        const parent = item.parentElement;
+        $(document).ready(function() {
+            $(".toggle-icon").on("click", function() {
+                const $icon = $(this);
+                const $answer = $icon.closest(".faq_accordion_container").find(".faq_answer");
 
-        // Close other open accordions (optional)
-        document.querySelectorAll('.faq_item').forEach(faq => {
-            if (faq !== parent) faq.classList.remove('active');
+                $answer.stop(true).slideToggle(300);
+
+                // swap icon
+                if ($icon.attr("src").includes("add-circle.svg")) {
+                    $icon.attr("src", "{{ asset('svg/add-circle.svg') }}");
+                } else {
+                    $icon.attr("src", "{{ asset('svg/add-circle.svg') }}");
+                }
+            });
         });
-
-        // Toggle current one
-        parent.classList.toggle('active');
-    });
-});
-</script>
-
+    </script>
 </body>
 
 </html>
