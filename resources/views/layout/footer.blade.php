@@ -28,10 +28,8 @@
                         <div class="input_group">
                             <input type="email" placeholder="Enter your email">
                             <div class="submit_btn">
-                                {{-- <div class="apply_pilot">
-                                    <a class="btn">Subscribe</a>
-                                </div> --}}
                                 <a>Apply To Pilot</a>
+                                <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
                             </div>
                         </div>
                         <p class="contact_text">Contact</p>

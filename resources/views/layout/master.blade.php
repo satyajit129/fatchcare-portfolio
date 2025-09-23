@@ -17,7 +17,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container sm_container">
         @include('layout.header')
     </div>
     <main>

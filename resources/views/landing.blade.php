@@ -8,8 +8,8 @@
                 <div class="blank left-blank"></div>
                 <div class="hero_text">
                     <div class="hero_text_content">
-                        <h1>Run Your Veterinary Clinic Smarter <br> with AI-Powered Insights</h1>
-                        <p>With <span>real-time AI insights, seamless scheduling, <br> and smarter KPI tracking</span> -
+                        <h1>Run Your Veterinary Clinic Smarter with AI-Powered Insights</h1>
+                        <p>With <span>real-time AI insights, seamless scheduling, and smarter KPI tracking</span> -
                             all
                             in
                             one simple dashboard.</p>
@@ -25,8 +25,9 @@
             <div class="hero_middle_content">
                 <div class="blank left-blank"></div>
                 <div class="hero_middle_text">
-                    <div class="apply_pilot">
+                    <div class="apply_pilot ">
                         <a class="btn">Apply To Pilot</a>
+                        <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
                     </div>
                     <div class="book_call">
                         <a class="btn">Book a Call</a>
@@ -62,15 +63,16 @@
         <div class="why_choose_container">
             <div class="why_choose_us_content">
                 <h2>Why Veterinary Clinics Choose FetchCare</h2>
-                <p>Modern veterinary clinic requires more than appointments. FetchCare gives you <span> real-time <br>
+                <p>Modern veterinary clinic requires more than appointments. FetchCare gives you <span> real-time 
                         visibility
                         into performance, simplifies operations, </span> and <span> AI Data-Driven helps you </span>
-                    focus on what <br> matters most:
+                    focus on what  matters most:
                     <span> delivering better care for pets. </span>
                 </p>
                 <div class="why_choose_us_btn">
-                    <div class="apply_pilot">
+                    <div class="apply_pilot ">
                         <a class="btn">Apply To Pilot</a>
+                        <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
                     </div>
                 </div>
             </div>
@@ -96,7 +98,7 @@
                 <div class="graph_content">
                     <img src="{{ asset('images/graph_3.png') }}" alt="graph">
                     <div class="graph_text">
-                        <img src="{{ asset('svg/activity.svg') }}" alt="">
+                        <img src="{{ asset('svg/chart.svg') }}" alt="">
                         <h4>Seamless Integrations</h4>
                         <p>Seamlessly connect with your existing PIMS system without causing any disruption to your
                             current operations.</p>
@@ -105,7 +107,7 @@
                 <div class="graph_content">
                     <img src="{{ asset('images/graph_4.png') }}" alt="graph">
                     <div class="graph_text">
-                        <img src="{{ asset('svg/chart.svg') }}" alt="">
+                        <img src="{{ asset('svg/activity.svg') }}" alt="">
                         <h4>Clinic Health Score</h4>
                         <p>Get a complete, at-a-glance AI Data-Driven overview of your organization’s overall
                             performance in real time.</p>
@@ -155,7 +157,7 @@
                     <!-- Inline Calendly Widget -->
                     <div class="calendly-inline-widget"
                         data-url="https://calendly.com/royroys043/new-meeting?back=0&month={{ date('Y-m', strtotime($date)) }}&date={{ $date }}&hide_gdpr_banner=1"
-                        style="min-width:320px;height:715px; width:100%;"></div>
+                        style="min-width:320px; width:100%;"></div>
                 </div>
             </div>
         </div>
@@ -175,11 +177,12 @@
                     <input type="text" placeholder="Full Name">
                     <input type="text" placeholder="Clinic Name">
                     <input type="email" placeholder="Enter Your Email">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mesasge"></textarea>
                     <div class="submit_btn">
-                        <div class="apply_pilot">
-                            <a class="btn">Get early Access</a>
-                        </div>
+                        <div class="apply_pilot ">
+                        <a class="btn">Apply To Pilot</a>
+                        <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
+                    </div>
                     </div>
                 </div>
             </div>
