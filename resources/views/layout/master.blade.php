@@ -13,6 +13,8 @@
             min-height: 0 !important;
         }
     </style>
+    <meta http-equiv="Permissions-Policy" content="payment=()">
+
 </head>
 
 <body>

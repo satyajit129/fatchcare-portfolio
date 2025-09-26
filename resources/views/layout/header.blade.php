@@ -1,7 +1,10 @@
 <header>
-    <div class="logo">
+    <a href="{{ route('index') }}">
+         <div class="logo">
         <img src="{{ asset('images/Logo.png') }}" alt="Logo">
     </div>
+    </a>
+   
 
     <!-- Hamburger button for mobile -->
     <div class="hamburger">
@@ -10,15 +13,15 @@
 
     <div class="nav_bar">
         <ul>
-            <li><a href="#">Featured</a></li>
-            <li><a href="#">Pilot Program</a></li>
-            <li><a href="#">Screenshots</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#featured">Featured</a></li>
+            <li><a href="#book_call">Pilot Program</a></li>
+            <li><a href="#screenshot">Screenshots</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 
     <div class="apply_pilot">
-        <a class="btn">Apply To Pilot</a>
+        <a href="#contact" class="btn">Apply To Pilot</a>
     </div>
 </header>

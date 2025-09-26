@@ -26,11 +26,11 @@
                 <div class="blank left-blank"></div>
                 <div class="hero_middle_text">
                     <div class="apply_pilot ">
-                        <a class="btn">Apply To Pilot</a>
+                        <a href="#contact" class="btn">Apply To Pilot</a>
                         <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
                     </div>
                     <div class="book_call">
-                        <a class="btn">Book a Call</a>
+                        <a href="#book_call" class="btn">Book a Call</a>
                         <img src="{{ asset('svg/calendar-2.png') }}" alt="Calender">
                     </div>
                 </div>
@@ -38,7 +38,7 @@
             </div>
         </div>
     </section>
-    <section class="hero_bottom">
+    {{-- <section class="hero_bottom">
         <div class="hero_bottom_container">
             <div class="hero_bottom_content">
                 <div class="hero_bottom_brands">
@@ -49,9 +49,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="ai_section">
+    <section class="ai_section" id="featured">
         <div class="ai_container">
             <div class="ai_section_content">
                 <img src="{{ asset('images/ai_content.png') }}" alt="ai-content">
@@ -59,7 +59,7 @@
         </div>
     </section>
 
-    <section class="why_choose_us">
+    <section class="why_choose_us" id="screenshot">
         <div class="why_choose_container">
             <div class="why_choose_us_content">
                 <h2>Why Veterinary Clinics Choose FetchCare</h2>
@@ -71,7 +71,7 @@
                 </p>
                 <div class="why_choose_us_btn">
                     <div class="apply_pilot ">
-                        <a class="btn">Apply To Pilot</a>
+                        <a href="#contact" class="btn">Apply To Pilot</a>
                         <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <div class="client_feedback">
+            {{-- <div class="client_feedback">
                 <h2>What Clinics Are Saying</h2>
                 <div class="client_feedback_content">
                     <img class="quote" src="{{ asset('svg/quote-down.svg') }}" alt="">
@@ -136,12 +136,12 @@
                     </div>
                     <h4>BluePearl Pet Hospital</h4>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
     </section>
 
-    <section class="experience_fatchcare">
+    <section class="experience_fatchcare" id="book_call">
         @php
             $date = date('Y-m-d');
         @endphp
@@ -164,7 +164,7 @@
     </section>
 
 
-    <section class="contact">
+    <section id="contact" class="contact">
         <div class="contact_container">
             <div class="contact_left">
                 <p class="contact_intro">We’re here to help you</p>
@@ -189,7 +189,7 @@
         </div>
     </section>
 
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="faq_container">
             <div class="faq_content">
                 <h2>FAQs</h2>
