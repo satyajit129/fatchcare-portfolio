@@ -8,7 +8,7 @@
                 <div class="blank left-blank"></div>
                 <div class="hero_text">
                     <div class="hero_text_content">
-                        <h1>Run Your Veterinary Clinic Smarter with AI-Powered Insights</h1>
+                        <h1>{{ $settings->hero_text_one }}</h1>
                         <p>With <span>real-time AI insights, seamless scheduling, and smarter KPI tracking</span> -
                             all
                             in
@@ -196,104 +196,17 @@
                 <p>We’re here to make business insurance simple.</p>
 
                 <div class="faq_item">
-                    <div class="faq_accordion_container">
-                        <div class="faq_accordion">
-                            <h4>What is FetchCare, and who is it for?</h4>
-                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                    @foreach ($faqs as $faq)
+                        <div class="faq_accordion_container">
+                            <div class="faq_accordion">
+                                <h4>{{ $faq->question }}</h4>
+                                <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
+                            </div>
+                            <div class="faq_answer" style="display: none;">
+                                <p>{{ $faq->answer }}</p>
+                            </div>
                         </div>
-                        <div class="faq_answer" style="display: none;">
-                            <p>
-                                FetchCare is a clinic management solution designed for healthcare providers,
-                                helping them streamline scheduling, patient records, billing, and overall operations.
-                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
-                                engagement.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq_accordion_container">
-                        <div class="faq_accordion">
-                            <h4>Do I need technical skills to use FetchCare?</h4>
-                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
-                        </div>
-                        <div class="faq_answer" style="display: none;">
-                            <p>
-                                FetchCare is a clinic management solution designed for healthcare providers,
-                                helping them streamline scheduling, patient records, billing, and overall operations.
-                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
-                                engagement.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq_accordion_container">
-                        <div class="faq_accordion">
-                            <h4>How secure is my data?</h4>
-                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
-                        </div>
-                        <div class="faq_answer" style="display: none;">
-                            <p>
-                                FetchCare is a clinic management solution designed for healthcare providers,
-                                helping them streamline scheduling, patient records, billing, and overall operations.
-                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
-                                engagement.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq_accordion_container">
-                        <div class="faq_accordion">
-                            <h4>Can FetchCare integrate with my existing tools?</h4>
-                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
-                        </div>
-                        <div class="faq_answer" style="display: none;">
-                            <p>
-                                FetchCare is a clinic management solution designed for healthcare providers,
-                                helping them streamline scheduling, patient records, billing, and overall operations.
-                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
-                                engagement.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq_accordion_container">
-                        <div class="faq_accordion">
-                            <h4>How does FetchCare improve my clinic’s efficiency?</h4>
-                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
-                        </div>
-                        <div class="faq_answer" style="display: none;">
-                            <p>
-                                FetchCare is a clinic management solution designed for healthcare providers,
-                                helping them streamline scheduling, patient records, billing, and overall operations.
-                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
-                                engagement.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq_accordion_container">
-                        <div class="faq_accordion">
-                            <h4>Is there customer support if I need help?</h4>
-                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
-                        </div>
-                        <div class="faq_answer" style="display: none;">
-                            <p>
-                                FetchCare is a clinic management solution designed for healthcare providers,
-                                helping them streamline scheduling, patient records, billing, and overall operations.
-                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
-                                engagement.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq_accordion_container">
-                        <div class="faq_accordion">
-                            <h4>Do you offer a free trial?</h4>
-                            <img src="{{ asset('svg/add-circle.svg') }}" alt="add-circle" class="toggle-icon">
-                        </div>
-                        <div class="faq_answer" style="display: none;">
-                            <p>
-                                FetchCare is a clinic management solution designed for healthcare providers,
-                                helping them streamline scheduling, patient records, billing, and overall operations.
-                                It’s ideal for small to medium-sized clinics that want efficiency and better patient
-                                engagement.
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>
