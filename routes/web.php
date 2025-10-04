@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AdminController::class, 'index'])->name('index');
 Route::get('/tc', [AdminController::class, 'tc'])->name('tc');
 Route::get('/privacy', [AdminController::class, 'privacy'])->name('privacy');
+Route::post('/contact-submit', [AdminController::class, 'contactSubmit'])->name('contactSubmit');
 
 Route::prefix('admin')->group(function () {
 
@@ -15,7 +16,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/settings', [AdminController::class, 'adminSettings'])->name('adminSettings');
         Route::post('store-settings', [AdminController::class, 'storeWebsiteSettings'])->name('storeWebsiteSettings');
         Route::get('/landing', [AdminController::class, 'adminLanding'])->name('adminLanding');
-
+        
         Route::prefix('faq')->group(function () {
             Route::get('/', [AdminController::class, 'adminFAQ'])->name('adminFAQ');
             Route::get('/create-or-edit/{id?}', [AdminController::class, 'adminFAQCreateOrEdit'])->name('adminFAQCreateOrEdit');
@@ -23,6 +24,10 @@ Route::prefix('admin')->group(function () {
             Route::get('delete/{id}', [AdminController::class, 'adminFAQDelete'])->name('adminFAQDelete');
         });
         Route::get('logout', [AdminController::class, 'adminLogout'])->name('adminLogout');
+        Route::get('/contacts', [AdminController::class, 'adminContacts'])->name('adminContacts');
+        Route::get('/contacts/delete/{id}', [AdminController::class, 'adminContactDelete'])->name('adminContactDelete');
+
+
     });
     // Login routes should be outside middleware
     Route::get('/login', [AdminController::class, 'adminLogin'])->name('adminLogin');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Faq;
 use App\Models\Setting;
 use App\Models\User;
@@ -83,7 +84,7 @@ class AdminController extends Controller
     public function adminFAQCreateOrEdit($id = null)
     {
         $faq = $id ? Faq::find($id) : null;
-        return view('backend.faq.create_or_edit', compact('faq'));
+        return view('backend.pages.faq_create_or_edit', compact('faq'));
     }
 
     // Save FAQ
@@ -143,5 +144,39 @@ class AdminController extends Controller
         } catch (Throwable $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
+    }
+    public function contactSubmit(Request $request)
+    {
+        try {
+            $request->validate([
+                'full_name'   => 'required|string|max:255',
+                'clinic_name' => 'required|string|max:255',
+                'email'       => 'required|email',
+                'message'     => 'required|string',
+            ]);
+
+            Contact::create($request->only(['full_name', 'clinic_name', 'email', 'message']));
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Thank you! Your request has been submitted.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong. Please try again later.',
+                'error'   => $e->getMessage()
+            ], 500);
+        }
+    }
+    public function adminContacts()
+    {
+        $contacts = Contact::latest()->get(); // Fetch all submissions
+        return view('backend.pages.contacts', compact('contacts'));
+    }
+    public function adminContactDelete($id)
+    {
+        Contact::findOrFail($id)->delete();
+        return redirect()->route('adminContacts')->with('success', 'Contact deleted successfully!');
     }
 }

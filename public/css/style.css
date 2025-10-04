@@ -748,7 +748,7 @@ header .logo img {
 
     /* Neutral/500 */
     color: #414141;
-    margin-top: 14px;
+    /* margin-top: 14px; */
 }
 
 .contact_left h2 span {
@@ -762,6 +762,7 @@ header .logo img {
     line-height: 32px;
     letter-spacing: -0.02em;
     color: #646464;
+    margin-top: 16px;
 }
 
 .contact_email span {

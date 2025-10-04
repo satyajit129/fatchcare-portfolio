@@ -1,7 +1,6 @@
 @extends('layout.master')
 
 @section('content')
-
     <section class="hero">
         <div class="hero_container">
             <div class="hero_top_content">
@@ -63,10 +62,10 @@
         <div class="why_choose_container">
             <div class="why_choose_us_content">
                 <h2>Why Veterinary Clinics Choose FetchCare</h2>
-                <p>Modern veterinary clinic requires more than appointments. FetchCare gives you <span> real-time 
+                <p>Modern veterinary clinic requires more than appointments. FetchCare gives you <span> real-time
                         visibility
                         into performance, simplifies operations, </span> and <span> AI Data-Driven helps you </span>
-                    focus on what  matters most:
+                    focus on what matters most:
                     <span> delivering better care for pets. </span>
                 </p>
                 <div class="why_choose_us_btn">
@@ -173,18 +172,23 @@
                         access.</span></p>
             </div>
             <div class="contact_right">
-                <div class="contact_form">
-                    <input type="text" placeholder="Full Name">
-                    <input type="text" placeholder="Clinic Name">
-                    <input type="email" placeholder="Enter Your Email">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Mesasge"></textarea>
-                    <div class="submit_btn">
-                        <div class="apply_pilot ">
-                        <a class="btn">Apply To Pilot</a>
-                        <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
+                <form id="contactForm">
+                    @csrf
+                    <div class="contact_form">
+
+                        <input type="text" placeholder="Full Name" name="full_name">
+                        <input type="text" placeholder="Clinic Name" name="clinic_name">
+                        <input type="email" placeholder="Enter Your Email" name="email">
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Mesasge"></textarea>
+                        <div class="submit_btn">
+                            <div class="apply_pilot ">
+                                <a href="javascript:void(0);" id="submitForm" class="btn">Apply To Pilot</a>
+                                <img src="{{ asset('svg/arrow-right.svg') }}" alt="Calender">
+                            </div>
+                        </div>
+
                     </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </section>
@@ -212,4 +216,29 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('custom_js')
+    <script>
+        $("#submitForm").on("click", function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: "{{ route('contactSubmit') }}",
+                type: "POST",
+                data: $("#contactForm").serialize(),
+                success: function(response) {
+                    if (response.success) {
+                        toastr.success(response.message);
+                        $("#contactForm")[0].reset();
+                    } else {
+                        toastr.error(response.message);
+                    }
+                },
+                error: function(xhr) {
+                    toastr.error("Something went wrong!");
+                }
+            });
+        });
+    </script>
 @endsection

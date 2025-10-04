@@ -13,6 +13,12 @@
             min-height: 0 !important;
         }
     </style>
+    <!-- Toastr CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+<!-- Toastr JS -->
+
+
     <meta http-equiv="Permissions-Policy" content="payment=()">
 
 </head>
@@ -29,9 +35,10 @@
 
     @include('layout.footer')
 
-    
+
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -51,14 +58,14 @@
         });
     </script>
     <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navBar = document.querySelector('.nav_bar');
+        const hamburger = document.querySelector('.hamburger');
+        const navBar = document.querySelector('.nav_bar');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navBar.classList.toggle('show');
-    });
-</script>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navBar.classList.toggle('show');
+        });
+    </script>
 
     @yield('custom_js')
 </body>
