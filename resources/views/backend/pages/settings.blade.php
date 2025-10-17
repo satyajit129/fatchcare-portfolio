@@ -58,13 +58,13 @@
                             rows="4">{{ $setting->hero_text_one ?? '' }}</textarea>
                     </div>
                 </div>
-                {{-- <div class="form-group">
+                <div class="form-group">
                     <div class="mb-3">
                         <label for="hero_text_two" class="form-label">Hero Section Text(Two)</label>
                         <textarea type="text" class="form-control" name="hero_text_two" id="hero_text_two" cols="50"
                             rows="4">{{ $setting->hero_text_two ?? '' }}</textarea>
                     </div>
-                </div> --}}
+                </div>
 
                 <div class="form-group d-flex">
                     <div class="mt-4 mb-3">

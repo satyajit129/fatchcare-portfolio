@@ -8,10 +8,7 @@
                 <div class="hero_text">
                     <div class="hero_text_content">
                         <h1>{{ $settings->hero_text_one }}</h1>
-                        <p>With <span>real-time AI insights, seamless scheduling, and smarter KPI tracking</span> -
-                            all
-                            in
-                            one simple dashboard.</p>
+                        <p>{{ $settings->hero_text_two }}</p>
                     </div>
 
                 </div>
@@ -62,11 +59,7 @@
         <div class="why_choose_container">
             <div class="why_choose_us_content">
                 <h2>Why Veterinary Clinics Choose FetchCare</h2>
-                <p>Modern veterinary clinic requires more than appointments. FetchCare gives you <span> real-time
-                        visibility
-                        into performance, simplifies operations, </span> and <span> AI Data-Driven helps you </span>
-                    focus on what matters most:
-                    <span> delivering better care for pets. </span>
+                <p>Running a modern clinic means balancing patient care with practice performance. FetchCare puts both in focus — giving you real-time visibility into operations, simplified workflows, and data-driven insights that improve efficiency, growth, and quality of care.</span>
                 </p>
                 <div class="why_choose_us_btn">
                     <div class="apply_pilot ">
