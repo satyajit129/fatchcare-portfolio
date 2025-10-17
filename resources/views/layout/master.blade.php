@@ -14,9 +14,10 @@
         }
     </style>
     <!-- Toastr CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="shortcut icon" href="{{ asset('images/website/' . $settings->website_favicon) }}" type="image/x-icon">
 
-<!-- Toastr JS -->
+    <!-- Toastr JS -->
 
 
     <meta http-equiv="Permissions-Policy" content="payment=()">

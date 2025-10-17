@@ -1,10 +1,14 @@
 <header>
     <a href="{{ route('index') }}">
-         <div class="logo">
-        <img src="{{ asset('images/Logo.png') }}" alt="Logo">
-    </div>
+        <div class="logo">
+            @if (isset($settings->website_logo))
+                <img src="{{ asset('images/website/' . $settings->website_logo) }}" alt="Logo">
+            @else
+                <img src="{{ asset('images/Logo.png') }}" alt="Logo">
+            @endif
+        </div>
     </a>
-   
+
 
     <!-- Hamburger button for mobile -->
     <div class="hamburger">

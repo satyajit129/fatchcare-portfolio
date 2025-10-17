@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="copy_right_text">
-                <p>© 2025 FetchCare Solutions</p>
+               <p>© {{ $settings->website_copy_right_text ?? 'FetchCare Solution' }}</p>
             </div>
         </div>
     </footer>
