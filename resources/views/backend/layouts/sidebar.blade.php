@@ -23,15 +23,28 @@
                     </a>
                 </li>
                 <!-- Contact Requests -->
-<li class="{{ Route::is('adminContacts') ? 'active' : '' }}">
-    <a class="sidenav-item-link" href="{{ route('adminContacts') }}">
-        <i class="mdi mdi-email-outline"></i>
-        <span class="nav-text">Contact Requests</span>
-    </a>
-</li>
+                <li class="{{ Route::is('adminContacts') ? 'active' : '' }}">
+                    <a class="sidenav-item-link" href="{{ route('adminContacts') }}">
+                        <i class="mdi mdi-email-outline"></i>
+                        <span class="nav-text">Contact Requests</span>
+                    </a>
+                </li>
 
 
-                                <!-- Settings -->
+                <li class="{{ Route::is('adminSilder','adminSilderCreateOrEdit') ? 'active' : '' }}">
+                    <a class="sidenav-item-link" href="{{ route('adminSilder') }}">
+                        <i class="mdi mdi-image-outline"></i>
+                        <span class="nav-text">Silder</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('adminFeatured','adminFeaturedCreateOrEdit') ? 'active' : '' }}">
+                    <a class="sidenav-item-link" href="{{ route('adminFeatured') }}">
+                        <i class="mdi mdi-star-outline"></i>
+                        <span class="nav-text">Featured</span>
+                    </a>
+                </li>
+
+                <!-- Settings -->
                 <li class="{{ Route::is('adminSettings') ? 'active' : '' }}">
                     <a class="sidenav-item-link" href="{{ route('adminSettings') }}">
                         <i class="mdi mdi-cog-outline"></i>

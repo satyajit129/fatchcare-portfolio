@@ -1,13 +1,13 @@
 @extends('backend.global.master')
 
-@section('title', 'FAQ')
-@section('heading', 'FAQ')
+@section('title', 'Silder')
+@section('heading', 'Silder')
 
 @section('backend_custom_style')
     <style>
         table th,
         table td {
-            vertical-align: middle;
+            vertical-align: middle !important;
         }
     </style>
 @endsection
@@ -15,36 +15,40 @@
 @section('backend_content')
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5>FAQ List</h5>
-            <a href="{{ route('adminFAQCreateOrEdit') }}" class="btn btn-outline-primary">Add FAQ</a>
+            <h5>Silder List</h5>
+            <a href="{{ route('adminSilderCreateOrEdit') }}" class="btn btn-outline-primary">Add Silder</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Question</th>
-                        <th>Answer</th>
+                        <th>Image</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($faqs as $index => $faq)
+                    @forelse($silders as $index => $silder)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $faq->question }}</td>
-                            <td>{{ $faq->answer }}</td>
                             <td>
-                                <a href="{{ route('adminFAQCreateOrEdit', $faq->id) }}"
+                                <a href="{{ asset('images/website/' . $silder->image) }}" target="_blank">
+                                    <img src="{{ asset('images/website/' . $silder->image) }}" alt="Slider Image"
+                                        width="100">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ route('adminSilderCreateOrEdit', $silder->id) }}"
                                     class="btn btn-sm btn-primary">Edit</a>
-                                <a href="javascript:void(0);" data-url="{{ route('adminFAQDelete', ['id' => $faq->id]) }}"
+                                <a href="javascript:void(0);"
+                                    data-url="{{ route('adminSilderDelete', ['id' => $silder->id]) }}"
                                     data-bs-toggle="modal" data-bs-target="#deleteModal" title="Delete"
                                     class="btn btn-sm btn-danger delete-btn">Delete</a>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-center">No FAQs found.</td>
+                            <td colspan="3" class="text-center">No Silders found. Please add slider images.</td>
                         </tr>
                     @endforelse
                 </tbody>

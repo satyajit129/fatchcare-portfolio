@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="col-md-12">
 
-                                        <button type="submit" class="btn btn-primary btn-pill mb-4 w-100">Sign
+                                        <button type="submit" class="btn btn-pill mb-4 w-100" style="background: #0000ff; color: #ffffff; font-weight: 500;">Sign
                                             In</button>
                                     </div>
                                 </div>

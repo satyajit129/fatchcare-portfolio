@@ -1,13 +1,13 @@
 @extends('backend.global.master')
 
-@section('title', 'FAQ')
-@section('heading', 'FAQ')
+@section('title', 'Featured')
+@section('heading', 'Featured')
 
 @section('backend_custom_style')
     <style>
         table th,
         table td {
-            vertical-align: middle;
+            vertical-align: middle !important;
         }
     </style>
 @endsection
@@ -15,36 +15,51 @@
 @section('backend_content')
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5>FAQ List</h5>
-            <a href="{{ route('adminFAQCreateOrEdit') }}" class="btn btn-outline-primary">Add FAQ</a>
+            <h5>Featured List</h5>
+            <a href="{{ route('adminFeaturedCreateOrEdit') }}" class="btn btn-outline-primary">Add Featured</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Question</th>
-                        <th>Answer</th>
+                        <th>Image</th>
+                        <th>Icon</th>
+                        <th>Title</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($faqs as $index => $faq)
+                    @forelse ($featureds as $index => $featured)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $faq->question }}</td>
-                            <td>{{ $faq->answer }}</td>
                             <td>
-                                <a href="{{ route('adminFAQCreateOrEdit', $faq->id) }}"
+                                <a href="{{ asset('images/website/' . $featured->image) }}" target="_blank">
+                                    <img src="{{ asset('images/website/' . $featured->image) }}" alt="Featured Image"
+                                        width="100">
+                                </a>
+                            </td>
+                            <td style="background: #0000ff; text-align:center;">
+                                <a href="{{ asset('images/website/' . $featured->icon) }}" target="_blank">
+                                    <img src="{{ asset('images/website/' . $featured->icon) }}" alt="Featured Icon"
+                                        width="100">
+                                </a>
+                            </td>
+                            <td>{{ $featured->title }}</td>
+                            <td>{{ $featured->description }}</td>
+                            <td>
+                                <a href="{{ route('adminFeaturedCreateOrEdit', $featured->id) }}"
                                     class="btn btn-sm btn-primary">Edit</a>
-                                <a href="javascript:void(0);" data-url="{{ route('adminFAQDelete', ['id' => $faq->id]) }}"
+                                <a href="javascript:void(0);"
+                                    data-url="{{ route('adminFeaturedDelete', ['id' => $featured->id]) }}"
                                     data-bs-toggle="modal" data-bs-target="#deleteModal" title="Delete"
                                     class="btn btn-sm btn-danger delete-btn">Delete</a>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-center">No FAQs found.</td>
+                            <td colspan="6" class="text-center">No Featured items found. Please add Featured items.</td>
                         </tr>
                     @endforelse
                 </tbody>

@@ -23,6 +23,18 @@ Route::prefix('admin')->group(function () {
             Route::post('/save/{id?}', [AdminController::class, 'adminFAQSave'])->name('adminFAQSave');
             Route::get('delete/{id}', [AdminController::class, 'adminFAQDelete'])->name('adminFAQDelete');
         });
+        Route::prefix('silder')->group(function () {
+            Route::get('/', [AdminController::class, 'adminSilder'])->name('adminSilder');
+            Route::get('/create-or-edit/{id?}', [AdminController::class, 'adminSilderCreateOrEdit'])->name('adminSilderCreateOrEdit');
+            Route::post('/save/{id?}', [AdminController::class, 'adminSilderSave'])->name('adminSilderSave');
+            Route::get('delete/{id}', [AdminController::class, 'adminSilderDelete'])->name('adminSilderDelete');
+        });
+        Route::prefix('/featured')->group(function () {
+            Route::get('/', [AdminController::class, 'adminFeatured'])->name('adminFeatured');
+            Route::get('/create-or-edit/{id?}', [AdminController::class, 'adminFeaturedCreateOrEdit'])->name('adminFeaturedCreateOrEdit');
+            Route::post('/save/{id?}', [AdminController::class, 'adminFeaturedSave'])->name('adminFeaturedSave');
+            Route::get('delete/{id}', [AdminController::class, 'adminFeaturedDelete'])->name('adminFeaturedDelete');
+        });
         Route::get('logout', [AdminController::class, 'adminLogout'])->name('adminLogout');
         Route::get('/contacts', [AdminController::class, 'adminContacts'])->name('adminContacts');
         Route::get('/contacts/delete/{id}', [AdminController::class, 'adminContactDelete'])->name('adminContactDelete');
