@@ -17,8 +17,9 @@ class AdminController extends Controller
 {
     public function index()
     {
+        $featureds = Featured::all();
         $faqs = Faq::all();
-        return view('landing', compact('faqs'));
+        return view('landing', compact('faqs', 'featureds'));
     }
     public function tc()
     {
@@ -296,5 +297,16 @@ class AdminController extends Controller
         } catch (Throwable $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
+    }
+    public function adminFeaturedDelete($id)
+    {
+        $featured = Featured::findOrFail($id);
+        $featured->delete();
+        // unlink image file if exists
+        $imagePath = public_path('images/website/' . $featured->image);
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+        return redirect()->route('adminFeatured')->with('success', 'Featured deleted successfully.');
     }
 }

@@ -511,7 +511,7 @@ header .logo img {
 
 
 /* Horizontal dotted line */
-.graph_container::after {
+/* .graph_content::after {
     content: "";
     position: absolute;
     left: 0;
@@ -523,7 +523,7 @@ header .logo img {
     border-image: repeating-linear-gradient(to right,
             #E7E7E7 0 10px,
             transparent 10px 14px) 1 stretch;
-}
+} */
 
 .graph_content {
     display: flex;
@@ -1390,7 +1390,7 @@ footer {
     }
 
     .hero_text_content p {
-        font-weight: 700;
+        /* font-weight: 700; */
         font-size: 15px;
         line-height: 26px;
         text-align: center;

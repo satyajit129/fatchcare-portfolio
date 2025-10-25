@@ -69,42 +69,18 @@
                 </div>
             </div>
             <div class="graph_container">
+                @forelse ($featureds as $featured)
                 <div class="graph_content">
-                    <img src="{{ asset('images/graph_1.png') }}" alt="graph">
+                    <img src="{{ asset('images/website/'.$featured->image) }}" alt="graph">
                     <div class="graph_text">
-                        <img src="{{ asset('svg/activity.svg') }}" alt="">
-                        <h4>AI Insights & Actions</h4>
-                        <p>Transform complex raw data into simple, clear, and highly actionable recommendations that
-                            drive better decisions.</p>
+                        <img src="{{ asset('images/website/'.$featured->icon) }}" alt="">
+                        <h4>{{ $featured->title }}</h4>
+                        <p>{{ $featured->description }}</p>
                     </div>
                 </div>
-                <div class="graph_content">
-                    <img src="{{ asset('images/graph_2.png') }}" alt="graph">
-                    <div class="graph_text">
-                        <img src="{{ asset('svg/chart.svg') }}" alt="">
-                        <h4>Performance Dashboard</h4>
-                        <p>Easily track revenue utilization, monitor client retention trends, and gain deeper insights
-                            every key performance metric.</p>
-                    </div>
-                </div>
-                <div class="graph_content">
-                    <img src="{{ asset('images/graph_3.png') }}" alt="graph">
-                    <div class="graph_text">
-                        <img src="{{ asset('svg/chart.svg') }}" alt="">
-                        <h4>Seamless Integrations</h4>
-                        <p>Seamlessly connect with your existing PIMS system without causing any disruption to your
-                            current operations.</p>
-                    </div>
-                </div>
-                <div class="graph_content">
-                    <img src="{{ asset('images/graph_4.png') }}" alt="graph">
-                    <div class="graph_text">
-                        <img src="{{ asset('svg/activity.svg') }}" alt="">
-                        <h4>Clinic Health Score</h4>
-                        <p>Get a complete, at-a-glance AI Data-Driven overview of your organization’s overall
-                            performance in real time.</p>
-                    </div>
-                </div>
+                @empty
+                   <p>No data Found</p> 
+                @endforelse
             </div>
             {{-- <div class="client_feedback">
                 <h2>What Clinics Are Saying</h2>
@@ -172,7 +148,7 @@
                         <input type="text" placeholder="Full Name" name="full_name">
                         <input type="text" placeholder="Clinic Name" name="clinic_name">
                         <input type="email" placeholder="Enter Your Email" name="email">
-                        <textarea name="message" id="" cols="30" rows="10" placeholder="Mesasge"></textarea>
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
                         <div class="submit_btn">
                             <div class="apply_pilot ">
                                 <a href="javascript:void(0);" id="submitForm" class="btn">Apply To Pilot</a>
