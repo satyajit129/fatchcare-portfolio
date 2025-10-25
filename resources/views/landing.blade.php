@@ -47,19 +47,40 @@
         </div>
     </section> --}}
 
-    <section class="ai_section" id="featured">
-        <div class="ai_container">
-            <div class="ai_section_content">
-                <img src="{{ asset('images/ai_content.png') }}" alt="ai-content">
-            </div>
-        </div>
-    </section>
+<section class="ai_section" id="featured">
+    <div class="slider_left"></div>
+
+    <div class="ai_container">
+<div class="ai_section_content">
+    <div class="slider_images">
+        @foreach($sliders as $key => $slider)
+            <img src="{{ asset('images/website/' . $slider->image) }}" 
+                 alt="Slider {{ $key+1 }}" 
+                 class="slider_img {{ $key === 0 ? 'active' : '' }}" 
+                 data-index="{{ $key }}">
+        @endforeach
+    </div>
+
+    <div class="slider_indicators">
+        @foreach($sliders as $key => $slider)
+            <span class="indicator {{ $key === 0 ? 'active' : '' }}" data-index="{{ $key }}"></span>
+        @endforeach
+    </div>
+</div>
+
+    </div>
+
+    <div class="slider_right"></div>
+</section>
+
 
     <section class="why_choose_us" id="screenshot">
         <div class="why_choose_container">
             <div class="why_choose_us_content">
                 <h2>Why Veterinary Clinics Choose FetchCare</h2>
-                <p>Running a modern clinic means balancing patient care with practice performance. FetchCare puts both in focus — giving you real-time visibility into operations, simplified workflows, and data-driven insights that improve efficiency, growth, and quality of care.</span>
+                <p>Running a modern clinic means balancing patient care with practice performance. FetchCare puts both in
+                    focus — giving you real-time visibility into operations, simplified workflows, and data-driven insights
+                    that improve efficiency, growth, and quality of care.</span>
                 </p>
                 <div class="why_choose_us_btn">
                     <div class="apply_pilot ">
@@ -70,16 +91,16 @@
             </div>
             <div class="graph_container">
                 @forelse ($featureds as $featured)
-                <div class="graph_content">
-                    <img src="{{ asset('images/website/'.$featured->image) }}" alt="graph">
-                    <div class="graph_text">
-                        <img src="{{ asset('images/website/'.$featured->icon) }}" alt="">
-                        <h4>{{ $featured->title }}</h4>
-                        <p>{{ $featured->description }}</p>
+                    <div class="graph_content">
+                        <img src="{{ asset('images/website/' . $featured->image) }}" alt="graph">
+                        <div class="graph_text">
+                            <img src="{{ asset('images/website/' . $featured->icon) }}" alt="">
+                            <h4>{{ $featured->title }}</h4>
+                            <p>{{ $featured->description }}</p>
+                        </div>
                     </div>
-                </div>
                 @empty
-                   <p>No data Found</p> 
+                    <p>No data Found</p>
                 @endforelse
             </div>
             {{-- <div class="client_feedback">
@@ -118,13 +139,13 @@
             <div class="experience_content">
                 <h2>Ready to Experience FetchCare?</h2>
                 <p>
-                    Book a free 15-minute demo and see how FetchCare Solutions can <span> transform your clinic <br>
+                    Book a free 30-minute demo and see how FetchCare Solutions can <span> transform your clinic <br>
                         operations. </span>
                 </p>
                 <div class="calendly_section">
                     <!-- Inline Calendly Widget -->
                     <div class="calendly-inline-widget"
-                        data-url="https://calendly.com/royroys043/new-meeting?back=0&month={{ date('Y-m', strtotime($date)) }}&date={{ $date }}&hide_gdpr_banner=1"
+                        data-url="https://calendly.com/fetchcaresolutions/new-meeting?back=0&month={{ date('Y-m', strtotime($date)) }}&date={{ $date }}&hide_gdpr_banner=1"
                         style="min-width:320px; width:100%;"></div>
                 </div>
             </div>

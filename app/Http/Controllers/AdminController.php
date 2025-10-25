@@ -19,7 +19,8 @@ class AdminController extends Controller
     {
         $featureds = Featured::all();
         $faqs = Faq::all();
-        return view('landing', compact('faqs', 'featureds'));
+        $sliders = Silder::all();
+        return view('landing', compact('faqs', 'featureds','sliders'));
     }
     public function tc()
     {
