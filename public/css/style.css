@@ -1553,6 +1553,12 @@ footer {
     .hero_bottom {
         display: none;
     }
+    .slider_left , .slider_right {
+        display: none;
+    }
+    .slider_indicators {
+        display: none;
+    }
 
     .ai_container {
         padding: 20px;
