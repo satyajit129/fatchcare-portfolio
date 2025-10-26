@@ -47,31 +47,29 @@
         </div>
     </section> --}}
 
-<section class="ai_section" id="featured">
-    <div class="slider_left"></div>
+    <section class="ai_section" id="featured">
+        <div class="slider_left"></div>
 
-    <div class="ai_container">
-<div class="ai_section_content">
-    <div class="slider_images">
-        @foreach($sliders as $key => $slider)
-            <img src="{{ asset('images/website/' . $slider->image) }}" 
-                 alt="Slider {{ $key+1 }}" 
-                 class="slider_img {{ $key === 0 ? 'active' : '' }}" 
-                 data-index="{{ $key }}">
-        @endforeach
-    </div>
+        <div class="ai_container">
+            <div class="ai_section_content">
+                <div class="slider_images">
+                    @foreach ($sliders as $key => $slider)
+                        <img src="{{ asset('images/website/' . $slider->image) }}" alt="Slider {{ $key + 1 }}"
+                            class="slider_img {{ $key === 0 ? 'active' : '' }}" data-index="{{ $key }}">
+                    @endforeach
+                </div>
 
-    <div class="slider_indicators">
-        @foreach($sliders as $key => $slider)
-            <span class="indicator {{ $key === 0 ? 'active' : '' }}" data-index="{{ $key }}"></span>
-        @endforeach
-    </div>
-</div>
+                <div class="slider_indicators">
+                    @foreach ($sliders as $key => $slider)
+                        <span class="indicator {{ $key === 0 ? 'active' : '' }}" data-index="{{ $key }}"></span>
+                    @endforeach
+                </div>
+            </div>
 
-    </div>
+        </div>
 
-    <div class="slider_right"></div>
-</section>
+        <div class="slider_right"></div>
+    </section>
 
 
     <section class="why_choose_us" id="screenshot">
@@ -231,4 +229,31 @@
             });
         });
     </script>
+
+<script>
+    $(document).ready(function() {
+        const $indicators = $('.indicator');
+        const $images = $('.slider_img');
+        let currentIndex = 0;
+        const totalSlides = $images.length;
+        function showSlide(index) {
+            $images.removeClass('active');
+            $images.eq(index).addClass('active');
+
+            $indicators.removeClass('active').eq(index).addClass('active'); // update indicators
+            currentIndex = index;
+        }
+        $indicators.on('click', function() {
+            const index = parseInt($(this).data('index'));
+            showSlide(index);
+        });
+        setInterval(function() {
+            let nextIndex = (currentIndex + 1) % totalSlides;
+            showSlide(nextIndex);
+        }, 4000);
+    });
+</script>
+
+
+
 @endsection

@@ -68,36 +68,7 @@
         });
     </script>
 
-<script>
-    const indicators = document.querySelectorAll('.indicator');
-    const images = document.querySelectorAll('.slider_img');
-    let currentIndex = 0;
-    const totalSlides = images.length;
 
-    // Function to show slide by index
-    function showSlide(index) {
-        images.forEach(img => img.classList.remove('active'));
-        indicators.forEach(ind => ind.classList.remove('active'));
-
-        images[index].classList.add('active');
-        indicators[index].classList.add('active');
-        currentIndex = index;
-    }
-
-    // Click event for indicators
-    indicators.forEach(indicator => {
-        indicator.addEventListener('click', () => {
-            const index = parseInt(indicator.getAttribute('data-index'));
-            showSlide(index);
-        });
-    });
-
-    // Auto slide every 4 seconds
-    setInterval(() => {
-        let nextIndex = (currentIndex + 1) % totalSlides;
-        showSlide(nextIndex);
-    }, 4000);
-</script>
 
 
 
