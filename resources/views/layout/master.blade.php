@@ -16,11 +16,13 @@
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="shortcut icon" href="{{ asset('images/website/' . $settings->website_favicon) }}" type="image/x-icon">
-
+    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
     <!-- Toastr JS -->
 
 
     <meta http-equiv="Permissions-Policy" content="payment=()">
+
+    @yield('custom_css')
 
 </head>
 
@@ -40,7 +42,7 @@
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
+    <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $(".toggle-icon").on("click", function() {

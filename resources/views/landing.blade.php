@@ -1,5 +1,82 @@
 @extends('layout.master')
+@section('custom_css')
+    <style>
+        .swiper-wrapper {
+            align-items: center;
+        }
+        .slider-wrap {
+            width: 100vw;
+            /* height: 520px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+            padding: 55px 0;
+        }
+        .swiper-slide {
+            width: 544px;
+            height: 402px;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-slide-active {
+            width: 910px;
+            height: 100%;
+            transform: scale(1.06) translateY(0);
+            z-index: 5;
+            border: 12px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+        }
+        .swiper-slide-next,
+        .swiper-slide-prev {
+            width: 544px;
+            height: 402px;
+            border-radius: 18px;
+            transform: translateY(59px);
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+        }
+        .swiper-slide:not(.swiper-slide-active) {
+            filter: saturate(0.9) brightness(0.95);
+            opacity: 0.92;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            margin-top: 40px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #ffffff;
+        }
+        @media (max-width: 820px) {
+            .swiper {
+                padding: 20px 18px;
+                margin: 10px;
+            }
+
+        }
+    </style>
+@endsection
 @section('content')
     <section class="hero">
         <div class="hero_container">
@@ -47,31 +124,22 @@
         </div>
     </section> --}}
 
-<section class="ai_section" id="featured">
-    <div class="slider_left"></div>
-
-    <div class="ai_container">
-<div class="ai_section_content">
-    <div class="slider_images">
-        @foreach($sliders as $key => $slider)
-            <img src="{{ asset('images/website/' . $slider->image) }}" 
-                 alt="Slider {{ $key+1 }}" 
-                 class="slider_img {{ $key === 0 ? 'active' : '' }}" 
-                 data-index="{{ $key }}">
-        @endforeach
-    </div>
-
-    <div class="slider_indicators">
-        @foreach($sliders as $key => $slider)
-            <span class="indicator {{ $key === 0 ? 'active' : '' }}" data-index="{{ $key }}"></span>
-        @endforeach
-    </div>
-</div>
-
-    </div>
-
-    <div class="slider_right"></div>
-</section>
+    <section class="ai_section" id="featured">
+        <div class="slider-wrap">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    @foreach ($sliders as $key => $slider)
+                        <div class="swiper-slide">
+                            <img class="slide-img" src="{{ asset('images/website/' . $slider->image) }}"
+                                alt="Slide {{ $key + 1 }}">
+                        </div>
+                    @endforeach
+                </div>
+                <!-- Pagination (indicators/dots) -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="why_choose_us" id="screenshot">
@@ -230,5 +298,71 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 3,
+            loop: true,
+            spaceBetween: 60,
+            speed: 2500,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            coverflowEffect: {
+                rotate: -20,
+                stretch: 0,
+                depth: 160,
+                modifier: 1.2,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                900: {
+                    slidesPerView: 2,
+                    spaceBetween: 40
+                },
+                600: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                350: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+            },
+            on: {
+                init: function() {
+                    toggleNavPagination(this);
+                },
+                resize: function() {
+                    toggleNavPagination(this);
+                }
+            }
+        });
+
+        // // Function to hide/show pagination & nav for small screens
+        // function toggleNavPagination(swiperInstance) {
+        //     if (window.innerWidth <= 600) {
+        //         swiperInstance.pagination.el.style.display = 'none';
+        //         swiperInstance.navigation.nextEl.style.display = 'none';
+        //         swiperInstance.navigation.prevEl.style.display = 'none';
+        //     } else {
+        //         swiperInstance.pagination.el.style.display = 'block';
+        //         swiperInstance.navigation.nextEl.style.display = 'block';
+        //         swiperInstance.navigation.prevEl.style.display = 'block';
+        //     }
+        // }
     </script>
 @endsection
