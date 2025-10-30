@@ -39,6 +39,39 @@
     @include('layout.footer')
 
 
+    <!-- AI Chat Icon -->
+    <div id="chat-icon">
+        <img src="{{ asset('images/chat_images.png') }}" alt="Chat" />
+    </div>
+
+    <!-- Chat Box -->
+    <div id="chat-box">
+        <div class="chat-content">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <img src="{{ asset('images/fetch-ai-icon.png') }}" alt="AI Icon">
+                    <span>AI Assistant</span>
+                </div>
+                <img class="chat-close" src="{{ asset('images/close.png') }}" alt="Close">
+            </div>
+            <div class="chat-messages">
+                <div class="chat-welcome">
+                    <img class="welcome-avatar" src="{{ asset('images/Logo_small.png') }}" alt="Website Icon">
+                    <h6>What do you want to know about your clinic?</h6>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="chat-input">
+            <img src="{{ asset('images/attach-file.png') }}" alt="Attachment">
+            <input type="text" id="chatText" placeholder="Ask anything..." />
+            <img src="{{ asset('images/send.png') }}" alt="">
+        </div>
+    </div>
+
+
+
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -69,6 +102,35 @@
             navBar.classList.toggle('show');
         });
     </script>
+
+    <script>
+    $(document).ready(function () {
+
+        // Open Chat Box
+        $('#chat-icon').on('click', function () {
+    const chatBox = $('#chat-box');
+
+    if (chatBox.is(':visible')) {
+        // Fade out
+        chatBox.animate({ opacity: 0 }, 200, function() {
+            chatBox.css('display', 'none');
+        });
+    } else {
+        // Show with flex and fade in
+        chatBox.css({ display: 'flex', justifyContent: 'space-between', opacity: 0 })
+               .animate({ opacity: 1 }, 200);
+    }
+});
+
+
+        // Close Chat Box
+        $('.chat-close').on('click', function () {
+            $('#chat-box').fadeOut(200);
+        });
+
+    });
+</script>
+
 
 
 

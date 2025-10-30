@@ -341,28 +341,7 @@
                     slidesPerView: 1,
                     spaceBetween: 20
                 },
-            },
-            on: {
-                init: function() {
-                    toggleNavPagination(this);
-                },
-                resize: function() {
-                    toggleNavPagination(this);
-                }
             }
         });
-
-        // // Function to hide/show pagination & nav for small screens
-        // function toggleNavPagination(swiperInstance) {
-        //     if (window.innerWidth <= 600) {
-        //         swiperInstance.pagination.el.style.display = 'none';
-        //         swiperInstance.navigation.nextEl.style.display = 'none';
-        //         swiperInstance.navigation.prevEl.style.display = 'none';
-        //     } else {
-        //         swiperInstance.pagination.el.style.display = 'block';
-        //         swiperInstance.navigation.nextEl.style.display = 'block';
-        //         swiperInstance.navigation.prevEl.style.display = 'block';
-        //     }
-        // }
     </script>
 @endsection
