@@ -40,9 +40,9 @@
 
 
     <!-- AI Chat Icon -->
-    <div id="chat-icon">
+    {{-- <div id="chat-icon">
         <img src="{{ asset('images/chat_images.png') }}" alt="Chat" />
-    </div>
+    </div> --}}
 
     <!-- Chat Box -->
     <div id="chat-box">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        
+
 
         <div class="chat-input">
             <img src="{{ asset('images/attach-file.png') }}" alt="Attachment">
@@ -104,32 +104,39 @@
     </script>
 
     <script>
-    $(document).ready(function () {
+        $(document).ready(function() {
 
-        // Open Chat Box
-        $('#chat-icon').on('click', function () {
-    const chatBox = $('#chat-box');
+            // Open Chat Box
+            $('#chat-icon').on('click', function() {
+                const chatBox = $('#chat-box');
 
-    if (chatBox.is(':visible')) {
-        // Fade out
-        chatBox.animate({ opacity: 0 }, 200, function() {
-            chatBox.css('display', 'none');
+                if (chatBox.is(':visible')) {
+                    // Fade out
+                    chatBox.animate({
+                        opacity: 0
+                    }, 200, function() {
+                        chatBox.css('display', 'none');
+                    });
+                } else {
+                    chatBox.css({
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            opacity: 0
+                        })
+                        .animate({
+                            opacity: 1
+                        }, 200);
+                }
+            });
+
+
+            // Close Chat Box
+            $('.chat-close').on('click', function() {
+                $('#chat-box').fadeOut(200);
+            });
+
         });
-    } else {
-        // Show with flex and fade in
-        chatBox.css({ display: 'flex', justifyContent: 'space-between', opacity: 0 })
-               .animate({ opacity: 1 }, 200);
-    }
-});
-
-
-        // Close Chat Box
-        $('.chat-close').on('click', function () {
-            $('#chat-box').fadeOut(200);
-        });
-
-    });
-</script>
+    </script>
 
 
 
