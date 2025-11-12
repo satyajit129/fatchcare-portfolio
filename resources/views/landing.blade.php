@@ -255,7 +255,7 @@
         <div class="faq_container">
             <div class="faq_content">
                 <h2>FAQs</h2>
-                <p>We’re here to make business insurance simple.</p>
+                {{-- <p>We’re here to make business insurance simple.</p> --}}
 
                 <div class="faq_item">
                     @foreach ($faqs as $faq)
